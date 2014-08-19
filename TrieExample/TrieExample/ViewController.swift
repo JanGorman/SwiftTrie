@@ -24,7 +24,6 @@ class ViewController: UIViewController {
 
     func editChanged(textField: UITextField!) {
         let words = trie.wordsForPrefix(textField.text)
-
         if let matchedWords = words {
             resultTextView.text = "\n".join(matchedWords.map({ "\($0)" }))
         } else {

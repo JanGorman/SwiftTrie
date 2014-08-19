@@ -56,9 +56,7 @@ class TrieNode {
         }
         if !isLeaf {
             for child in children.values {
-                for word in child.words() {
-                    words.append(word)
-                }
+                words += child.words()
             }
         }
         return words
@@ -68,7 +66,7 @@ class TrieNode {
         if parent == nil {
             return ""
         }
-        return parent!.asString() + char!
+        return parent!.asString() + String(char!)
     }
 
 }

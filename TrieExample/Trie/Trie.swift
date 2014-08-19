@@ -29,9 +29,7 @@ public struct Trie {
     private func allWords() -> [String] {
         var allWords = [String]()
         for node in rootNode.children.values {
-            for word in node.words() {
-                allWords.append(word)
-            }
+            allWords += node.words()
         }
         return allWords
     }
